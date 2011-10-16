@@ -7,11 +7,9 @@ Gem::Specification.new do |s|
   s.version     = GeorgedrummondSinatraHelpers::VERSION
   s.authors     = ["George Drummond"]
   s.email       = ["george@accountsapp.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/georgedrummond/georgedrummond_sinatra_helpers"
   s.summary     = %q{Common helper methods}
   s.description = %q{Some common helper methods I use in my apps}
-
-  s.rubyforge_project = "georgedrummond_sinatra_helpers"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
