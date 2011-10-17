@@ -1,0 +1,39 @@
+= GeorgeDrummond::Sinatra::Helpers
+
+This is a collection of common helper methods that I use within my Sinatra apps. They have a rails like feel and they mainly fill in for helpers you would find in Rails. They do not behave exactly like their rails counterparts so please be careful to read the RDOC.
+
+== Installation
+
+First of all install the gem or add it to your Gemfile.
+
+    gem install georgedrummond_sinatra_helpers
+    
+In your Gemfile
+
+    gem "georgedrummond_sinatra_helpers"
+
+
+== Usage
+
+Sample usage in a project
+
+    require "georgedrummond_sinatra_helpers"
+
+    class Application < Sinatra::Base
+      include GeorgeDrummond::Sinatra::Helpers
+      
+      get "/" do
+        haml :index
+      end
+      
+    end
+
+Helper methods will be available in your views and methods within the Application class.
+
+== Documentation
+
+For documentation please see GeorgeDrummond::Sinatra::Helpers
+
+== License
+
+Released under the MIT License.
