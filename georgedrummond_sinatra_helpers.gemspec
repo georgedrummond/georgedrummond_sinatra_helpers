@@ -4,7 +4,7 @@ require "georgedrummond_sinatra_helpers/version"
 
 Gem::Specification.new do |s|
   s.name        = "georgedrummond_sinatra_helpers"
-  s.version     = GeorgedrummondSinatraHelpers::VERSION
+  s.version     = GeorgeDrummond::Sinatra::Helpers::VERSION
   s.authors     = ["George Drummond"]
   s.email       = ["george@accountsapp.com"]
   s.homepage    = "https://github.com/georgedrummond/georgedrummond_sinatra_helpers"

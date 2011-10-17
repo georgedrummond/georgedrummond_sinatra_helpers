@@ -1,3 +1,7 @@
-module GeorgedrummondSinatraHelpers
-  VERSION = "0.0.1"
+module GeorgeDrummond
+  module Sinatra
+    module Helpers
+      VERSION = "0.0.2"
+    end
+  end
 end
