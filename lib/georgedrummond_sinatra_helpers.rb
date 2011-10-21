@@ -12,18 +12,18 @@ module GeorgeDrummond
       # With only one CSS file
       #
       #    stylesheet_link_tag :app
-      #    # => <link href="/css/app.css" type="text/css" />
+      #    # => <link href="/css/app.css" type="text/css" rel="stylesheet" />
       #
       # With an array of CSS files we want to show
       #
       #    stylesheet_link_tag :app, :header # =>
-      #      <link href="/css/app.css" type="text/css" />
-      #      <link href="/css/header.css" type="text/css" />
+      #      <link href="/css/app.css" type="text/css" rel="stylesheet" />
+      #      <link href="/css/header.css" type="text/css" rel="stylesheet" />
       def stylesheet_link_tag(*sources)
         html = []
         sources.each do |stylesheet|
           path = "/css/#{stylesheet}.css"
-          html << "<link href=\"#{ url(path) }\" type=\"text/css\" />"
+          html << "<link href=\"#{ url(path) }\" type=\"text/css\" rel=\"stylesheet\" />"
         end
         return html.join("\n")
       end
