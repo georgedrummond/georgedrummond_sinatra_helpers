@@ -18,7 +18,7 @@ module GeorgeDrummond
       #   mail_to("georgedrummond@gmail.com", "George Drummond")
       #     # => <a href="mailto:georgedrummond@gmail.com" class="mailto">George Drummond</a>
       def mail_to(email, text=email)
-        "<a href=\"mailto:\#{email}\" class=\"mailto\">#{text}</a>"
+        "<a href=\"mailto:#{email}\" class=\"mailto\">#{text}</a>"
       end
       
       # Creates the gravatar (www.gravatar.com) html from the email address and arguments provided.
