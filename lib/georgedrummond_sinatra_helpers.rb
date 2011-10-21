@@ -1,8 +1,29 @@
 require "georgedrummond_sinatra_helpers/version"
+require "digest/md5"
 
 module GeorgeDrummond
   module Sinatra
     module Helpers
+      # Creates the gravatar (www.gravatar.com) html from the email address and arguements provided.
+      # If no size is specified then it defaults to 50x50px
+      #
+      # ==== Examples
+      #
+      # With no size specified
+      #
+      #   gravatar_image("georgedrummond@gmail.com")
+      #     # => <img src="http://www.gravatar.com/avatar/d278a12b969a495ab16fdd942e748fe5?s=50" class="gravatar" />
+      #
+      # With a size specified
+      #
+      #   gravatar_image("georgedrummond@gmail.com", 150)
+      #     # => <img src="http://www.gravatar.com/avatar/d278a12b969a495ab16fdd942e748fe5?s=150" class="gravatar" />
+      #
+      def gravatar_image(email, size=50)
+        hash = Digest::MD5.hexdigest(email)
+        "<img src=\"http://www.gravatar.com/avatar/#{hash}?s=#{size}\" class=\"gravatar\" />"
+      end
+      
       # Creates html tags for stylesheets from the arguements provided. Dont include the <tt>.css</tt> extension as this
       # will be automatically appended. You can specify one or multiple css files at once. Place your css files in
       # the <tt>public/css</tt> folder of your app.
@@ -10,8 +31,8 @@ module GeorgeDrummond
       # ==== Examples
       #
       # With only one CSS file
-      #
-      #    stylesheet_link_tag :app
+      # 
+      #   stylesheet_link_tag :app
       #    # => <link href="/css/app.css" type="text/css" rel="stylesheet" />
       #
       # With an array of CSS files we want to show
