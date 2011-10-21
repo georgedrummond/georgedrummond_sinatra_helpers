@@ -4,7 +4,24 @@ require "digest/md5"
 module GeorgeDrummond
   module Sinatra
     module Helpers
-      # Creates the gravatar (www.gravatar.com) html from the email address and arguements provided.
+      # Creates the html for a mail_to link being given an email address and an optional text argument
+      #
+      # ==== Examples
+      #
+      # With only an email address provided
+      #
+      #   mail_to("georgedrummond@gmail.com")
+      #     # => <a href="mailto:georgedrummond@gmail.com" class="mailto">georgedrummond@gmail.com</a>
+      #
+      # With an optional text field provided
+      #
+      #   mail_to("georgedrummond@gmail.com", "George Drummond")
+      #     # => <a href="mailto:georgedrummond@gmail.com" class="mailto">George Drummond</a>
+      def mail_to(email, text=email)
+        "<a href=\"mailto:\"#{email}\" class=\"mailto\">#{text}</a>"
+      end
+      
+      # Creates the gravatar (www.gravatar.com) html from the email address and arguments provided.
       # If no size is specified then it defaults to 50x50px
       #
       # ==== Examples
@@ -18,7 +35,6 @@ module GeorgeDrummond
       #
       #   gravatar_image("georgedrummond@gmail.com", 150)
       #     # => <img src="http://www.gravatar.com/avatar/d278a12b969a495ab16fdd942e748fe5?s=150" class="gravatar" />
-      #
       def gravatar_image(email, size=50)
         hash = Digest::MD5.hexdigest(email)
         "<img src=\"http://www.gravatar.com/avatar/#{hash}?s=#{size}\" class=\"gravatar\" />"
